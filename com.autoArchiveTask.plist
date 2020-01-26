@@ -1,0 +1,39 @@
+<plist version="1.0">
+<dict>
+  <!-- Label唯一的标识 -->
+  <key>Label</key>
+  <string>com.autoArchiveTask.plist</string>
+
+  <key>Program</key>
+  <string>/Users/username/Desktop/code/Project/run.sh</string>
+
+  <!-- 指定要运行的脚本 -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/username/Desktop/code/Project/run.sh</string>
+  </array>
+  <!-- 指定要运行的时间 -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+        <key>Minute</key>
+        <integer>00</integer>
+        <key>Hour</key>
+        <integer>11</integer>
+    </dict>
+    <dict>
+        <key>Minute</key>
+        <integer>00</integer>
+        <key>Hour</key>
+        <integer>16</integer>
+    </dict>
+  </array>
+
+<!-- 标准输出文件 -->
+<key>StandardOutPath</key>
+<string>/Users/username/Desktop/code/Project/run.log</string>
+<!-- 标准错误输出文件，错误日志 -->
+<key>StandardErrorPath</key>
+<string>/Users/username/Desktop/code/Project/run.error</string>
+</dict>
+</plist>
