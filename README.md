@@ -212,13 +212,12 @@ require 'json'
 
 上传到第三方内测平台（蒲公英、fir等）Fastlane 也有相关的插件，一行代码搞定，如 Fir 就是：
 
+```shell
+# 前往fir.im获取 api token, 将鼠标放置右上角账号上面, 在下拉窗选择API token
+# 若使用的蒲公英, 请前往 https://www.pgyer.com/ 查看上传方法
+# 如果使用Firimfile, 此处为 firim 即可
+firim(firim_api_token:'xxxx') 
 ```
-
-```
-
-
-
- 
 
 
 
@@ -284,13 +283,13 @@ TODO: 等待实现。
 
 
 
-相关配置文件已经上传到 GitHub 仓库，地址[点击这里]()
-
-
-
 ### 参考链接
 
+1. [Mac上，执行定时任务：launchctl](https://my.oschina.net/shede333/blog/470377)
+2. [Operation not permitted](http://osxdaily.com/2018/10/09/fix-operation-not-permitted-terminal-error-macos/)
 
+3. [Fastlane](https://docs.fastlane.tools/)
+4. [钉钉开发文档](https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq)
 
 
 
