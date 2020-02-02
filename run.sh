@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/bin/bash
 
 echo "开始打包了"
 
@@ -17,18 +16,35 @@ curl https://oapi.dingtalk.com/robot/send?access_token=xxx\
 
 
 
-
-
-cd /Users/chenliangjing/Desktop/code/hedgehog
+cd /Users/username/Desktop/code/Project
 
 echo `pwd`
 
-/Users/chenliangjing/.fastlane/bin/fastlane customer_hoc
+/usr/local/bin/fastlane customer_hoc
 
 echo '打包客户端完毕'
 
-/Users/chenliangjing/.fastlane/bin/fastlane driver_hoc 
+/usr/local/bin/fastlane driver_hoc 
 
 echo '打包司机端完毕'
 
+# 保存打包时间到日志
+echo `date '+%Y-%m-%d %H:%M:%S'`  > "/Users/username/Desktop/code/Project/lastArchiveDate.log"
+
 echo 'finish'
+
+# 发送 @ 消息到具体某人
+curl https://oapi.dingtalk.com/robot/send?access_token=xxx\
+    -H 'Content-Type: application/json' \
+    -d '{"msgtype": "text", 
+         "text": {
+              "content": "iOS 包已经更新完成，请知悉... @183xxxx0000"
+         },
+         "at": {
+        	"atMobiles": [
+            "183xxxx0000" 
+        	], 
+        	"isAtAll": false
+    	}
+       }'
+
