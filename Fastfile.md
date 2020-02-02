@@ -38,8 +38,8 @@ platform :ios do
      output_directory: "./ipa", #ipa的存放目录
      export_options: {
          provisioningProfiles: {
-             "cn.ccmore.Project.customer"=>"CustomerAdhocProfiles", 
-             "cn.ccmore.Project.driver"=>"DriverAdhocProfiles"
+             "bundleId"=>"CustomerAdhocProfiles", 
+             "bundleId"=>"DriverAdhocProfiles"
          }
      }
    )
@@ -99,7 +99,7 @@ platform :ios do
   app_name    = get_ipa_info_plist_value(ipa: app_patch, key: "CFBundleDisplayName")
   app_url = download_url
 
-  
+
   dingTalk_url = "https://oapi.dingtalk.com/robot/send?access_token=xxx"
 
   # 构造消息格式
