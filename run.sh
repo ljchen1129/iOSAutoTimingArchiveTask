@@ -20,13 +20,17 @@ cd /Users/username/Desktop/code/Project
 
 echo `pwd`
 
-/usr/local/bin/fastlane customer_hoc
+export LC_ALL=en_US.UTF-8;
+export LANG=en_US.UTF-8;
 
+#bundle install —- path vendor/bundler
+#bundle exec fastlane add_plugin versioning
+bundle exec fastlane customer_hoc
 echo '打包客户端完毕'
 
-/usr/local/bin/fastlane driver_hoc 
-
+bundle exec fastlane driver_hoc 
 echo '打包司机端完毕'
+
 
 # 保存打包时间到日志
 echo `date '+%Y-%m-%d %H:%M:%S'`  > "/Users/username/Desktop/code/Project/lastArchiveDate.log"

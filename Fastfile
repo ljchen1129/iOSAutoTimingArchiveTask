@@ -10,20 +10,26 @@ require 'json'
 platform :ios do
 
 
-  desc "打包 Customer"
+  desc "打包 target"
   lane :customer_hoc do
     #自动增长 bulidNumber
-    increment_build_number(xcodeproj: "Project.xcodeproj")
+  increment_build_number_in_plist(
+    target: 'xxxx'
+  )
     # add actions here: https://docs.fastlane.tools/actions
-    sh "fastlane adhoc --env Customer"
+    sh "fastlane adhoc --env target"
    end
 
-  desc "打包 Driver"
+  desc "打包 target"
   lane :driver_hoc do
+
     #自动增长 bulidNumber
-    increment_build_number(xcodeproj: "Project.xcodeproj")
+    increment_build_number_in_plist(
+      target: 'xxxx'
+    )
+
     # add actions here: https://docs.fastlane.tools/actions
-    sh "fastlane adhoc --env Driver"
+    sh "fastlane adhoc --env target"
   end
      
 
@@ -38,8 +44,8 @@ platform :ios do
      output_directory: "./ipa", #ipa的存放目录
      export_options: {
          provisioningProfiles: {
-             "bundleId"=>"CustomerAdhocProfiles", 
-             "bundleId"=>"DriverAdhocProfiles"
+             "bundleId"=>"targetAdhocProfiles", 
+             "bundleId"=>"targetAdhocProfiles"
          }
      }
    )
